@@ -1,0 +1,6 @@
+compiler/mycompiler
+compiler/lex.yy.c
+compiler/parser.tab.c
+compiler/parser.tab.h
+backend/__pycache__/
+target_code.out

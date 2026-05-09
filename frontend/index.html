@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compiler Interactive IDE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Compiler Interactive IDE</h1>
+        <div class="controls">
+            <label for="target-lang">Target Language:</label>
+            <select id="target-lang">
+                <option value="python">Python</option>
+                <option value="cpp">C++</option>
+            </select>
+            <button id="compile-btn">Compile & Run</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="editor-section">
+            <textarea id="source-code" spellcheck="false">int a = 10;
+float b = 5.5;
+if (a > 5) {
+    print(a + b);
+} else {
+    print(b);
+}</textarea>
+        </div>
+
+        <div class="output-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-target="tab-output">Output</button>
+                <button class="tab-btn" data-target="tab-parse-tree">Parse Tree</button>
+                <button class="tab-btn" data-target="tab-symbol-table">Symbol Table</button>
+                <button class="tab-btn" data-target="tab-semantic">Semantic Analysis</button>
+                <button class="tab-btn" data-target="tab-tac">TAC</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="tab-output" class="tab-pane active">
+                    <h3>Runtime Output</h3>
+                    <pre id="runtime-out" class="out-box"></pre>
+                    <h3>Target Code</h3>
+                    <pre id="target-code-out" class="out-box"></pre>
+                </div>
+                <div id="tab-parse-tree" class="tab-pane">
+                    <pre id="ast-out" class="out-box"></pre>
+                </div>
+                <div id="tab-symbol-table" class="tab-pane">
+                    <pre id="symtab-out" class="out-box"></pre>
+                </div>
+                <div id="tab-semantic" class="tab-pane">
+                    <h3>Errors / Warnings</h3>
+                    <pre id="semantic-out" class="out-box"></pre>
+                </div>
+                <div id="tab-tac" class="tab-pane">
+                    <pre id="tac-out" class="out-box"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
